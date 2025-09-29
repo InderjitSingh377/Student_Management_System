@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Login and Signup Form</title>
+
+  <style>
+  /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: blue; /* Light gray background */
+  min-height: 100vh; /* Ensures content fills the viewport */
+  display: flex; /* Center content vertically */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+}
+
+/* Container Styles */
+.container {
+  background-color: #fff; /* White background for the form */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 40px; /* Padding for content */
+  width: 350px; /* Fixed width for responsiveness */
+}
+
+/* Header Styles */
+header {
+  font-size: 24px; /* Adjust font size */
+  font-weight: bold;
+  text-align: center;
+  
+  margin-bottom: 20px; /* Spacing after the header */
+}
+
+/* Input Field Styles */
+.field {
+  margin-bottom: 15px; /* Spacing between fields */
+}
+
+.field input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+  font-size: 16px; /* Consistent font size */
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #007bff; /* Blue border on focus */
+}
+
+/* Label Styles (optional) */
+label {
+  display: block; /* Makes labels appear on separate lines */
+  margin-bottom: 5px; /* Spacing between label and input */
+}
+
+/* Button Styles */
+.field button {
+  background-color: #007bff; /* Blue background */
+  color: #fff; /* White text */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px; /* Consistent font size */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.field button:hover {
+  background-color: #0069d9; /* Darker blue on hover */
+}
+
+/* Footer Styles (optional) */
+footer {
+  position: absolute; /* Positions footer at bottom */
+  bottom: 0; /* Aligns footer to the bottom */
+  left: 0; /* Aligns footer to the left */
+  width: 100%; /* Stretches footer across the entire width */
+  text-align: center;
+  padding: 10px;
+  font-size: 12px; /* Smaller font size for copyright info */
+  color: #ccc; /* Light gray text */
+}
+  
+ </style>
+
+  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <section class="container forms">
+    <div class="form login">
+      <div class="form-content">
+        <header>Teacher Dashboard Login</header>
+        <form id="loginForm" class="mt-4">
+          <div class="field input-field">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter Username" class="input" required />
+          </div>
+
+          <div class="field input-field">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter Password" class="password" required />
+          </div>
+
+          <div class="field button-field">
+            <button type="submit" class="logout-button">
+              <i class="bx bx-log-out"></i> Log in
+            </button>
+          </div>
+        </form>
+
+        <script>
+          document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Implement secure authentication here (replace with API call or server-side validation)
+            if (username === 'admin' && password === 'password123') { // Replace with secure authentication
+              localStorage.setItem('authenticated', 'true');
+              window.location.href = 'teacher.html';
+            } else {
+              alert('Invalid username or password!');
+            }
+          });
+        </script>
+      </body>
+
+</html>

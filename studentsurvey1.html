@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Survey dashbord</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="./dashbord.css">
+    <style>
+	
+#colorchange {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: 100px; /* Adjust the height as needed */
+}
+.recent-grid {
+  display: grid;
+  grid-template-columns: 100%;
+  margin-top: 1px;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 2rem;
+  background-color : yellow;
+}
+.card-header button {
+  background: #071952;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #071952;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-height: 600px;
+}
+#dropdown {
+  background: #071952;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #071952;
+}
+#dropdown a {
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+}
+#dropdown a:hover {
+  color: #071952;
+  border-radius: 10px;
+  background: #fff;
+}
+.btn-secondary {
+  background: #071952;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #071952;
+  margin-bottom: 10px;
+}
+.container {
+  display: none;
+}
+
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.submit-button {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Centers the buttons horizontally */
+  align-items: center; /* Centers the buttons vertically */
+}
+
+button {
+  margin: 20px; /* Adds spacing between buttons */
+  padding: 20px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+
+.quiz-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 2px rgba(100, 100, 100, 0.1);
+  width: 600px;
+ justify-content: center;
+ margin: 0 auto;
+  overflow: hidden;
+}
+
+.quiz-header {
+  padding: 2rem;
+}
+
+h2 {
+  padding: 1rem;
+  text-align: center;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+ul li label {
+  cursor: pointer;
+}
+
+button {
+  background-color: #8e44ad;
+  color: #fff;
+  border: none;
+  display: block;
+  width: 93%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: inherit;
+  padding: 1.3rem;
+}
+
+button:hover {
+  background-color: #732d91;
+}
+
+button:focus {
+  outline: none;
+  background-color: #5e3370;
+}
+
+
+</style>
+</head>
+<body>
+    <input type="checkbox" id="nav-toggle" placeholder="hello">
+    <div class="sideber">
+        <div class="sidebar-brand">
+            <h2><span>Next Step</span>
+            </h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="./dashbord.html" ><i class="las la-home"></i><span>Dashbord</span></a>
+                </li>
+                <li>
+                    <a href="./studentselectblock.html"><i class="las la-users"></i><span>Students</span></a>
+                </li>
+                <li>
+                    <a href="./teacherlogin.html"><i class="las la-chalkboard-teacher"></i><span>Teachers</span></a>
+                </li>
+                <li>
+                    <a href="./transaction.html"> <i class="las la-meh"></i><span>Feedback Form</span></a>
+                </li>
+				<li>
+                    <a href="./vacancy.html"> <i class="las la-bullhorn"></i><span>Vacancy in University</span></a>
+                </li>
+				
+				<li>
+                    <a href="./achievement.html" > <i class="las la-trophy achievement-icon">
+					</i><span> Achievement of University </span></a>
+                </li>
+				<li>
+                    <a href="./studentsurvey.html" class="active"> <i class="feedback-icon las la-thumbs-up"></i><span class="achievement-text"> Student Satisfaction Survey 
+					</span></a>
+                </li>
+               
+            </ul>
+        </div>
+        
+    </div>
+    <div class="maincontent">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <i class="las la-bars"></i>
+                </label>
+              Student Survey Dashbord
+            </h2>
+                       	            <a href="#" ><b>Chandigarh</b>University</a>
+
+            <div class="user-wrapper">
+                <img src="./images/cu.png" width="120px" height="90px" alt="" class="admin-img">
+            </div>
+        </header>
+
+        <main>
+
+            <div class="container-fluid" id="container">
+                <div class="quiz-container" id="quiz">
+      <div class="quiz-header">
+        <h2 id="question">Question text</h2>
+        <ul>
+          <li>
+            <input type="radio" name="answer" id="a" class="answer">
+            <label for="a" id="a_text">Question</label>
+          </li>
+
+          <li>
+            <input type="radio" name="answer" id="b" class="answer">
+            <label for="b" id="b_text">Question</label>
+          </li>
+
+          <li>
+            <input type="radio" name="answer" id="c" class="answer">
+            <label for="c" id="c_text">Question</label>
+          </li>
+
+          <li>
+            <input type="radio" name="answer" id="d" class="answer">
+            <label for="d" id="d_text">Question</label>
+          </li>
+		  
+		  <li>
+            <input type="radio" name="answer" id="e" class="answer">
+            <label for="e" id="e_text">Question</label>
+          </li>
+		  
+        </ul>
+      </div>
+      <button id="submit">Submit</button>
+    </div>
+	</div>
+    <script>
+			const quizData = [
+    {
+        question: "(1) How well did the teachers prepare for the classes?*",
+        a: "Thoroughly",
+        b: "Satisfactorily",
+        c: "Poorly",
+        d: "Indifferently",
+		e: "Won’t teach at all",
+       
+    },
+    {
+        question: "(2) How much of the syllabus was covered in the  class?*",
+        a: "85 to 100%",
+		b: "70 to 84%",
+		c: "55 to 69%",
+		d: "30 to 54%",
+		e: "Below 30%",
+    },
+    {
+        question: "(3) How well were the teachers able to communicate?*",
+        a: "Always effective",
+		b: "Sometimes effective",
+		c: "Just satisfactorily",
+		d: "Generally ineffective",
+		e: "Very poor communication",
+    },
+    {
+        question: "(4) The teacher’s approach to teaching can best be described as*",
+        a: "Excellent",
+		b: "Very Good",
+		c: "Good",
+		d: "Fair",
+		e: "Poor",
+    },
+	
+	
+	{
+        question: "(5)Fairness of the internal evaluation process by the teachers.*",
+        a: "Always Fair",
+		b: "Usually fair",
+		c: "Sometimes unfair",
+		d: "usually unfair",
+		e: "Unfair",
+       
+    },
+    {
+        question: "(6) Was your performance in assignments discussed with you?*",
+        a: "Every time",
+		b: "Usually",
+		c: "Occasionally/Sometimes",
+		d: "Rarely",
+		e: "Never",
+    },
+    {
+        question: "(7) The teaching and mentoring process in your institution facilitates you in cognitive, social and emotional growth.*",
+        a: "Significantly",
+		b: "Very well",
+		c: "Moderately",
+		d: "Marginally",
+		e: "Not at all",
+    },
+    {
+        question: "(8) The institute takes active interest in promoting internship, student exchange, field visit opportunities for students.*",
+        a: "Regularly",
+		b: "Often",
+		c: "Sometimes",
+		d: "Rarely",
+		e: "Never",
+    },
+	
+	
+	
+	
+	 {
+        question: "(9) The institution provides multiple opportunities to learn and grow.*",
+        a: "Strongly agree",
+		b: "Agree",
+		c: "Neutral",
+		d: "Disagree",
+		e: "Strongly disagree",
+       
+    },
+    {
+        question: "(10) Teachers inform you about your expected competencies, course outcomes and programme outcomes.*",
+        a: "Every time",
+		b: "Usually",
+		c: "Somewhat",
+		d: "Occasionally/Sometimes",
+		e: "Rarely",
+	
+    },
+    {
+        question: "(11) Your mentor does a necessary follow-up with an assigned task to you.*",
+        
+        a: "Every time",
+		b: "Usually",
+		c: "Occasionally/Sometimes",
+		d: "Rarely",
+		e: "I don’t have a mentor",
+    },
+    {
+        question: "(12) The teachers identify your strengths and encourage you with providing right level of challenges.*",
+        a: "Fully",
+		b: "Reasonably",
+		c: "Partially",
+		d: "Slightly",
+		e: "Unable to",
+    },
+	
+	
+	{
+        question: "(13) The teachers identify your strengths and encourage you with providing right level of challenges.*",
+        a: "Every time",
+		b: "Usually",
+		c: "Occasionally/Sometimes",
+		d: "Rarely",
+		e: "Never",
+       
+    },
+    {
+        question: "(14) Teachers are able to identify your weaknesses and help you to overcome them.*",
+        a: "Every time",
+		b: "Usually",
+		c: "Occasionally/Sometimes",
+		d: "Rarely",
+		e: "Never",
+    },
+    {
+        question: "(15)  The institution makes effort to engage students in the monitoring, review and continuous quality improvement of the teaching learning process.*",
+        a: "Strongly agree",
+		b: "Agree",
+		c: "Neutral",
+		d: "Disagree",
+		e: "Strongly disagree",
+    },
+    {
+        question: "(16) The institute/ teachers use student centric methods, such as experiential learning, participative learning and problem solving methodologies for enhancing learning experiences.*",
+        a: "To a great extent",
+		b: "Moderate",
+		c: "Some what",
+		d: "Very little",
+		e: "Not at all",
+    },
+
+  {
+        question: "(17) Teachers encourage you to participate in extracurricular activities.*",
+        a: "Strongly agree",
+		b: "Agree",
+		c: "Neutral",
+		d: "Disagree",
+		e: "Strongly disagree",
+       
+    },
+    {
+        question: "(18) What percentage of teachers use ICT tools such as LCD projector, Multimedia, etc. while teaching.*",
+        a: "Above 90%",
+		b: "70 – 89%",
+		c: "50 – 69%",
+		d: "30 – 49%",
+		e: "Below 29%",
+    },
+    {
+        question: "(19)Efforts are made by the institute / teachers to help you prepare for making appropriate career choices after end of degree programme, e.g. Assistance to go for Higher Education or Job or Entrepreneurship etc.*",
+        a: "To a great extent",
+		b: "Moderate",
+		c: "Some what",
+		d: "Very little",
+		e: "Not at all",
+    },
+    {
+        question: "(20) The overall quality of teaching-learning process in your institute is very good.*",
+        a: "Strongly agree",
+		b: "Agree",
+		c: "Neutral",
+		d: "Disagree",
+		e: "Strongly disagree",
+    },
+];
+
+const quiz = document.getElementById('quiz')
+const answerEls = document.querySelectorAll('.answer')
+const questionEl = document.getElementById('question')
+const a_text = document.getElementById('a_text')
+const b_text = document.getElementById('b_text')
+const c_text = document.getElementById('c_text')
+const d_text = document.getElementById('d_text')
+const e_text = document.getElementById('e_text')
+const submitBtn = document.getElementById('submit')
+
+let currentQuiz = 0
+let score = 0
+
+loadQuiz()
+
+function loadQuiz() {
+    deselectAnswers()
+
+    const currentQuizData = quizData[currentQuiz]
+
+    questionEl.innerText = currentQuizData.question
+    a_text.innerText = currentQuizData.a
+    b_text.innerText = currentQuizData.b
+    c_text.innerText = currentQuizData.c
+    d_text.innerText = currentQuizData.d
+	e_text.innerText = currentQuizData.e
+
+}
+
+function deselectAnswers() {
+    answerEls.forEach(answerEl => answerEl.checked = false)
+}
+
+function getSelected() {
+    let answer
+
+    answerEls.forEach(answerEl => {
+        if(answerEl.checked) {
+            answer = answerEl.id
+        }
+    })
+
+    return answer
+}
+
+submitBtn.addEventListener('click', () => {
+    const answer = getSelected()
+    
+    if(answer) {
+        if(answer === quizData[currentQuiz].correct) {
+            score++
+        }
+
+        currentQuiz++
+
+        if(currentQuiz < quizData.length) {
+            loadQuiz()
+        } else {
+            quiz.innerHTML = `
+                <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+
+                <button onclick="location.reload()">Reload</button>
+            `
+        }
+    }
+})
+	
+	</script>
+    
+    
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

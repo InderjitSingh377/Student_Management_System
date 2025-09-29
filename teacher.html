@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./dashbord.css" />
+    <link rel="stylesheet" href="./teacher.css" />
+  </head>
+  <body>
+    <input type="checkbox" id="nav-toggle" />
+    <div class="sideber">
+      <div class="sidebar-brand">
+        <h2><span>Next Step</span></h2>
+      </div>
+      <div class="sidebar-menu">
+        <ul>
+          <li>
+            <a href="./dashbord.html"
+              ><i class="las la-home"></i><span>Dashboard</span></a
+            >
+          </li>
+          <li>
+            <a href="./studentselectblock.html"
+              ><i class="las la-users"></i><span>Students</span></a
+            >
+          </li>
+          <li>
+            <a href="./teacherlogin.html" class="active"
+              ><i class="las la-chalkboard-teacher"></i><span>Teachers</span></a
+            >
+          </li>
+          <li>
+                    <a href="./transaction.html"> <i class="las la-meh"></i><span>Feedback Form</span></a>
+                </li>
+				<li>
+                    <a href="./vacancy.html"> <i class="las la-bullhorn"></i><span>Vacancy in University</span></a>
+                </li>
+				
+				<li>
+                    <a href="./vacancy.html"> <i class="las la-trophy achievement-icon"></i><span class="achievement-text"> Achievement of University </span></a>
+                </li>
+				
+				<li>
+                    <a href="./studentsurvey.html"> <i class="feedback-icon las la-thumbs-up"></i><span class="achievement-text"> Student Satisfaction Survey 
+					</span></a>
+                </li>
+               
+        </ul>
+      </div>
+    </div>
+    <div class="maincontent">
+      <header>
+        <h2>
+          <label for="nav-toggle">
+            <i class="las la-bars"></i>
+          </label>
+          Teacher Dashboard
+        </h2>
+                   	            <a href="#" ><b>Chandigarh</b>University</a>
+
+        <div class="user-wrapper">
+          <img
+            src="./images/cu.png"
+            width="120px"
+            height="90px"
+            
+          />
+         <!-- <button><i class="las la-cog"></i><span>Settings</span></button>
+          <a href="./index.html"
+            ><button>
+              <i class="las la-sign-out-alt"></i><span>Logout</span>
+            </button></a
+          >-->
+        </div>
+      </header>
+      <main>
+	  <a href="#" onclick="logout()">
+   
+	<button class="logout-button" onclick="redirectToLogin()">
+    <i class="las la-sign-out-alt"></i>
+    <span>Logout</span>
+</button>
+
+	 </main>
+</a>
+        <div class="container" id="container">
+          <div class="title">Add Teacher</div>
+          <form id="teacherForm">
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="firstName">Full Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder="Full name"
+                  required
+                />
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="lastName">Employee ID</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder="Employee ID"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="contact">Contact</label>
+				<input type="text" 
+				id="contact"
+				class="form-control"
+				maxlength="10" 
+				oninput="validateContactNumber()">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="address">Sitting Room</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  placeholder="Sitting Room"
+                  required
+                />
+              </div>
+              <div class="form-group col-md-4">
+                <label for="course">Subject</label>
+                <select id="course" class="form-control" required>
+                  <option selected disabled>Choose...</option>
+                  <option>CV(Computer Vision)</option>
+                  <option>CV(Computer Vision Lab)</option>
+                  <option>NMOUP</option>
+				  <option>NMOUP Lab </option>
+                </select>
+              </div>
+              <div class="form-group col-md-4">
+                <label for="status">Present Status</label>
+                <select id="status" class="form-control" required>
+                  <option selected disabled>Choose...</option>
+                  <option value="Present">Present</option>
+                  <option value="Absent">Absent</option>
+				  <option value="ShortLeave">Short Leave</option>
+                  <option value="HalfDay">Half Day</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="col-md-3 mb-3">
+                <div class="form-group">
+                  <label for="teacherImage">Image</label>
+                  <input
+                    type="file"
+                    class="form-control-file"
+                    id="teacherImage"
+                    accept="image/*"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="teacherCV">Time Table</label>
+                <input
+                  type="file"
+                  class="form-control-file"
+                  id="teacherCV"
+                  accept="image/*"
+                />
+              </div>
+            </div>
+
+            <button
+              
+			  class="btn btn-primary"
+              type="button"
+              onclick="addTeacher()"
+              id="addButton"
+            >
+              Add <i class="las la-user-plus"></i>
+            </button>
+            <button
+              class="btn btn-primary"
+              type="button"
+              onclick="updateTeacher()"
+              id="updateButton"
+              style="display: none"
+            >
+              Update
+            </button>
+          </form>
+        </div>
+        <div class="cards">
+          <div class="cards-single">
+            <div>
+              <h1 id="numbers"></h1>
+              <span>Total Teacher</span>
+            </div>
+            <div>
+              <i class="las la-chalkboard-teacher"></i>
+            </div>
+          </div>
+        </div>
+        <div class="recent-grid">
+          <div class="projects">
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                
+              </button>
+              <div aria-labelledby="dropdownMenuButton" >
+             
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <h3>Teachers Time Table</h3>
+                <button onclick="display()">
+                  Add <i class="las la-user-plus"></i>
+                </button>
+              </div>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table>
+                    <thead style ="background-color : yellow;"> 
+                      <tr>
+                        <td>Image of Teacher</td>
+                        <td>Name</td>
+                        <td>Contact No</td>
+                        <td>Email</td>
+                        <td>Sitting Room</td>
+                        <td>Subject</td>
+                        <td>Present Status</td>
+						<td>Time Table of Teacher</td>
+						<td>Update & Delete </td>
+                      </tr>
+                    </thead>
+                    <tbody id="tablebody1"></tbody>
+                  </table>
+                </div>
+              </div>
+			  
+            </div>
+          </div>
+        </div>
+		
+<script>
+      function redirectToLogin() {
+      // Redirect to the login page
+      window.location.href = "dashbord.html"; // Replace "login.html" with the actual path to your login page
+
+      // Prevent going back to the logout page
+      window.history.pushState(null, null, window.location.href);
+      window.addEventListener('popstate', function(event) {
+        window.history.pushState(null, null, window.location.href);   
+
+      });
+    }
+</script>
+     
+    </div>
+    <script src="./teacher.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9PflJvvOz9vM9qqA59oI4bCdGXj9ERdknLPMO"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFwA5yJGzEyC7oa0xN3RXmAJ5d7"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

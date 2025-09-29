@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Vacancy</title>
+	<style>
+	* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #007bff;
+    color: white;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.vacancy-list {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.vacancy {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.vacancy:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.vacancy h2 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.vacancy p {
+    color: #555;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    border-radius: 5px;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#jobDetails h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+#jobDetails p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+	</style>
+</head>
+<body>
+    <header>
+        <h1>University Job Vacancies</h1>
+    </header>
+
+    <section class="vacancy-list">
+        <div class="vacancy" onclick="showModal('job1')">
+            <h2>Professor of Computer Science</h2>
+            <p>Department: Computer Science</p>
+        </div>
+        <div class="vacancy" onclick="showModal('job2')">
+            <h2>Assistant Lecturer of Mathematics</h2>
+            <p>Department: Mathematics</p>
+        </div>
+        <div class="vacancy" onclick="showModal('job3')">
+            <h2>Laboratory Assistant</h2>
+            <p>Department: Physics</p>
+        </div>
+    </section>
+
+    <!-- Modal for Job Details -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="jobDetails"></div>
+        </div>
+    </div>
+
+    <script>
+	const jobDetails = {
+    job1: {
+        title: "Professor of Computer Science",
+        department: "Computer Science",
+        description: "The Professor of Computer Science will be responsible for teaching, mentoring, and conducting research in various fields of computer science. Candidates must have a PhD and proven academic experience."
+    },
+    job2: {
+        title: "Assistant Lecturer of Mathematics",
+        department: "Mathematics",
+        description: "The Assistant Lecturer of Mathematics will assist in teaching undergraduate courses. Applicants should hold at least a Master's degree in Mathematics and have relevant teaching experience."
+    },
+    job3: {
+        title: "Laboratory Assistant",
+        department: "Physics",
+        description: "The Laboratory Assistant will support the Physics department in conducting practical classes and maintaining laboratory equipment. Candidates with technical experience in laboratory settings are preferred."
+    }
+};
+
+function showModal(jobId) {
+    const modal = document.getElementById("modal");
+    const jobDetailsContainer = document.getElementById("jobDetails");
+
+    const job = jobDetails[jobId];
+    jobDetailsContainer.innerHTML = `
+        <h3>${job.title}</h3>
+        <p><strong>Department:</strong> ${job.department}</p>
+        <p>${job.description}</p>
+    `;
+
+    modal.style.display = "flex";
+}
+
+function closeModal() {
+    const modal = document.getElementById("modal");
+    modal.style.display = "none";
+}
+
+	</script>
+</body>
+</html>

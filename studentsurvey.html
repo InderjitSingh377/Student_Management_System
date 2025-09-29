@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Survey dashbord</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="./dashbord.css">
+    <style>
+	
+#colorchange {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  height: 100px; /* Adjust the height as needed */
+}
+.recent-grid {
+  display: grid;
+  grid-template-columns: 100%;
+  margin-top: 1px;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 2rem;
+  background-color : yellow;
+}
+.card-header button {
+  background: #071952;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #071952;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-height: 600px;
+}
+#dropdown {
+  background: #071952;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #071952;
+}
+#dropdown a {
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+}
+#dropdown a:hover {
+  color: #071952;
+  border-radius: 10px;
+  background: #fff;
+}
+.btn-secondary {
+  background: #071952;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #071952;
+  margin-bottom: 10px;
+}
+.container {
+  display: none;
+}
+
+.close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+.submit-button {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.close:hover,
+.close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Centers the buttons horizontally */
+  align-items: center; /* Centers the buttons vertically */
+}
+
+button {
+  margin: 20px; /* Adds spacing between buttons */
+  padding: 20px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+    <input type="checkbox" id="nav-toggle" placeholder="hello">
+    <div class="sideber">
+        <div class="sidebar-brand">
+            <h2><span>Next Step</span>
+            </h2>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="./dashbord.html" ><i class="las la-home"></i><span>Dashbord</span></a>
+                </li>
+                <li>
+                    <a href="./studentselectblock.html"><i class="las la-users"></i><span>Students</span></a>
+                </li>
+                <li>
+                    <a href="./teacherlogin.html"><i class="las la-chalkboard-teacher"></i><span>Teachers</span></a>
+                </li>
+                <li>
+                    <a href="./transaction.html"> <i class="las la-meh"></i><span>Feedback Form</span></a>
+                </li>
+				<li>
+                    <a href="./vacancy.html"> <i class="las la-bullhorn"></i><span>Vacancy in University</span></a>
+                </li>
+				
+				<li>
+                    <a href="./achievement.html" > <i class="las la-trophy achievement-icon">
+					</i><span> Achievement of University </span></a>
+                </li>
+				<li>
+                    <a href="./studentsurvey.html"class="active"> <i class="feedback-icon las la-thumbs-up"></i><span class="achievement-text"> Student Satisfaction Survey 
+					</span></a>
+                </li>
+               
+            </ul>
+        </div>
+        
+    </div>
+    <div class="maincontent">
+        <header>
+            <h2>
+                <label for="nav-toggle">
+                    <i class="las la-bars"></i>
+                </label>
+              Student Survey Dashbord
+            </h2>
+                       	            <a href="#" ><b>Chandigarh</b>University</a>
+
+            <div class="user-wrapper">
+                <img src="./images/cu.png" width="120px" height="90px" alt="" class="admin-img">
+            </div>
+        </header>
+
+        <main>
+            
+            <div class="recent-grid">
+                <div class="projects">
+                    <div class="card">
+                        <div class="card-header">
+                            <p><strong> ............................................Student Satisfaction Survey - Teaching, Learning, and Evaluation............................................</strong><br>
+<br>Chandigarh University is conducting a Student Satisfaction Survey regarding Teaching – Learning and Evaluation, which will help university to improve quality of teaching, enhancing connect with students as a key stakeholder, and address important issues / deficiencies (if /any) in a timely manner.  
+<br><br><strong>IMPORTANT NOTE : </strong><br>
+1) A student will have to respond to all the questions given in the given format with sincere effort and thought.<br>
+2) All questions should be compulsorily attempted, for questions having five responses, choose the most appropriate one, and for subjective questions provide the requested information.<br>
+3) Kindly restrict your response to University’s teaching learning / evaluations / academic processes only.<br>
+4) Please fill the survey latest at the earliest as per issued timeline by the Registrar office.</p>
+                    </div>
+                </div>
+
+                
+                </div>
+
+            <div class="container-fluid" id="container">
+                <div class="title"><strong>Basic information</strong></div>
+                <form id="studentFeedbackForm">
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="teachersNameStd">Email-id*</label>
+                            <input type="text" class="form-control" id="teachersNameStd" placeholder="Email-id" required />
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="employeeIdStd">Your - Name*</label>
+                            <input type="tel" class="form-control" id="employeeIdStd" placeholder="Your - Name" required />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <label for="studentNameStd">UID / Registration Number*</label>
+                            <input type="text" class="form-control" id="studentNameStd" placeholder="UID / Registration Number" required />
+                        </div>
+                         <div class="col-md-3 mb-3">
+                            <label for="teacherBehaviourStd">Institute Name*</label>
+                            <select id="teacherBehaviourStd" class="form-control" required>
+                                <option selected disabled>Choose...</option>
+                                <option value="Excellent">University Institute of Allied Health Sciences</option>
+                                <option value="Misbehave">University Institute of Media Studies</option>
+                                <option value="Poor">University Institute of Teachers Training And Research</option>
+                            <option value="Excellent">University Institute of Architecture</option>
+                                <option value="Misbehave">University Institute of Engineering</option>
+                                <option value="Poor">University Institute of Pharma Sciences</option>
+                            <option value="Excellent">University Institute of Computing</option>
+                                <option value="Misbehave">University Institute of Tourism And Hospitality Management</option>
+                                <option value="Poor">University Institute of Sciences</option>
+         
+                                <option value="Excellent">Institute of Distance And Online Learning</option>
+                                <option value="Misbehave">University Institute of Legal Studies</option>
+                                <option value="Poor">University Institute of Biotechnology</option>
+                            <option value="Excellent">University Institute of Liberal Arts And Humanities</option>
+                                <option value="Misbehave">University School of Business</option>
+                                <option value="Poor">University Institute of Design</option>
+                            <option value="Excellent">University Institute of Physical Education and Sports</option>
+                                <option value="Misbehave">Centre for Advanced Studies in Social Sciences and Management</option>
+                                <option value="Poor">Global School of Finance and Accounting</option>                   
+							
+							</select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                       
+                        <div class="col-md-4 mb-3">
+                            <label for="studentNameStd">What degree program are you pursuing from University?*</label>
+                            <input type="text" class="form-control" id="studentNameStd" placeholder="Your Answer..." required />
+                        </div>
+						
+						<div class="col-md-4 mb-3">
+                            
+							<label for="teacherBehaviourStd">What is your degree program’s batch or admission year?*</label>
+                            <select id="teacherBehaviourStd" class="form-control" required>
+                                <option selected disabled>Choose...</option>
+                                <option value="Excellent">2024</option>
+                                <option value="Misbehave">2023</option>
+                                <option value="Poor">2022</option>
+                            <option value="Excellent">2021</option>
+                                <option value="Misbehave">2020</option>
+                                <option value="Poor">2019</option>
+                            <option value="Excellent"> 2018</option>
+                                <option value="Misbehave">2017</option>
+                                <option value="Poor">2016</option>
+        
+							</select>
+
+						</div>
+						
+                        
+                    </div>
+                    <div class="form-row">
+                        	<div class="col-md-4 mb-3">
+                            
+							<label for="teacherBehaviourStd">Gender*</label>
+                            <select id="teacherBehaviourStd" class="form-control" required>
+                                <option selected disabled>Choose...</option>
+                                <option value="Excellent">Male</option>
+                                <option value="Misbehave">Female</option>
+                                <option value="Poor">Transgender</option>
+                            
+                            
+        
+							</select>
+
+						</div>
+						<div class="col-md-4 mb-3">
+                            
+							<label for="teacherBehaviourStd">Nationality*</label>
+                            <select id="teacherBehaviourStd" class="form-control" required>
+                                <option selected disabled>Choose...</option>
+                                <option value="Excellent">Indian Student</option>
+                                <option value="Misbehave">International Student</option>
+                                                       
+							</select>
+<button class="logout-button" onclick="redirectToLogin()">
+    <i class="las la-sign-out-alt"></i>
+    <span>NEXT--></span>
+</button>
+						</div>
+                    </div>
+                </form>
+            </div>            </div>
+        </main>
+    </div>
+    <script>
+      function redirectToLogin() {
+      // Redirect to the login page
+      window.location.href = "studentsurvey1.html"; // Replace "login.html" with the actual path to your login page
+
+      // Prevent going back to the logout page
+      window.history.pushState(null, null, window.location.href);
+      window.addEventListener('popstate', function(event) {
+        window.history.pushState(null, null, window.location.href);   
+
+      });
+    }
+</script>
+     
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

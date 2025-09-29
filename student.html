@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ZenhBwPWxvQvkzAUaSI5yTCTh4tFU2E7qrUsJv4lWDqznqhQ8K9lrkcQK9dwVr+t" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+  <link rel="stylesheet" href="./dashbord.css" />
+  <link rel="stylesheet" href="./student.css" />
+</head>
+<body>
+  <input type="checkbox" id="nav-toggle" placeholder="hello">
+  <div class="sideber">
+    <div class="sidebar-brand">
+      <h2><span>Next Step</span>
+      </h2>
+    </div>
+    <div class="sidebar-menu">
+      <ul>
+        <li>
+          <a href="./dashbord.html"><i class="las la-home"></i><span>Dashbord</span></a>
+        </li>
+        <li>
+          <a href="./student.html" class="active"><i class="las la-users"></i><span>Students</span></a>
+        </li>
+        <li>
+          <a href="./teacherlogin.html"><i class="las la-chalkboard-teacher"></i><span>Teachers</span></a>
+        </li>
+        <li>
+                    <a href="./transaction.html"> <i class="las la-meh"></i><span>Feedback Form</span></a>
+                </li>
+				<li>
+                    <a href="./vacancy.html"> <i class="las la-bullhorn"></i><span>Vacancy in University</span></a>
+                </li>
+				
+				<li>
+                    <a href="./vacancy.html"> <i class="las la-trophy achievement-icon"></i><span class="achievement-text"> Achievement of University </span></a>
+                </li>
+				<li>
+                    <a href="./studentsurvey.html"> <i class="feedback-icon las la-thumbs-up"></i><span class="achievement-text"> Student Satisfaction Survey 
+					</span></a>
+                </li>
+               
+      </ul>
+      </ul>
+    </div>
+
+  </div>
+  <div class="maincontent">
+    <header>
+      <h2>
+        <label for="nav-toggle">
+          <i class="las la-bars"></i>
+        </label>
+        Student Dashboard
+      </h2>
+                 	            <a href="#" ><b>Chandigarh</b>University</a>
+
+      <div class="user-wrapper">
+        <img src="./images/cu.png" width="120" height="90">
+        <!-- <button><i class="las la-cog"></i><span>steeing</span></button>
+        <a href="./index.html"><button><i class="las la-sign-out-alt"></i><span>steeing</span></button></a>
+      -->
+
+      </div>
+    </header>
+    <div class="container">
+      <div class="title">Add Students</div>
+      <form>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault01">First name</label>
+            <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault02">Last name</label>
+            <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="" required>
+          </div>
+
+        </div>
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationDefaultUsername">Email</label>
+            <div class="input-group">
+              <input type="text" class="form-control" id="validationDefaultEmail" placeholder="Email"
+                aria-describedby="inputGroupPrepend2" required>
+            </div>
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <label for="validationDefault04">Contact</label>
+            <input type="text" class="form-control" id="validationDefaultnumber" placeholder="Contact " required>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationDefault03">Address</label>
+            <input type="text" class="form-control" id="validationDefault03" placeholder="Address" required>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputState">Course</label>
+            <select id="inputState" class="form-control" onchange="filterStudentsByCourse()">
+              <option selected disabled>Choose...</option>
+              <option value="Web Development" class="options">Web Development</option>
+              <option value="Graphics" class="options">Graphics</option>
+              <option value="Flutter" class="options">Flutter</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="validationDefault10">Fees</label>
+              <input type="text" class="form-control" id="validationDefault10" placeholder="Fees Amount" value=""
+                required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="validationDefault03">Shift</label>
+              <input type="text" class="form-control" id="validationDefault13" placeholder="Shift" required>
+            </div>
+          </div>
+
+        </div>
+        <div class="form-row">
+          <div class="col-md-3 mb-3">
+
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Image</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlFile2">Cv</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile2">
+          </div>
+        </div>
+        <form id="studentForm">
+
+          <button class="btn btn-primary" type="submit" onclick="addStudent()" id="addis">Add<i
+              class="las la-user-plus"></i></button>
+          <button class="btn btn-primary" type="submit" onclick="addStudent()" id="update"
+            style="display: none;">Update</button>
+        </form>
+    </div>
+
+
+    </form>
+
+    </main>
+
+    <main>
+
+      <div class="cards">
+        <div class="cards-single">
+          <div>
+            <h1 id="numbers"></h1>
+            <span>Total Teacher </span>
+          </div>
+          <div>
+            <i class="las la-users"></i>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="recent-grid">
+        <div class="projects">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             
+            </button>
+            <div
+                aria-labelledby="dropdownMenuButton"
+              >
+             
+              </div>
+          </div>  	
+    <div class="recent-grid">
+      <div class="projects">
+        <div class="card">
+          <div class="card-header">
+            <h3>Teachers</h3>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table>
+                <thead style ="background-color : yellow;" >
+                  <tr>
+                    <th>Image of Teacher</th>
+                    <th>Name</th>
+                    <th>Contact No</th>
+                    <th>Email</th>
+                    <th>Sitting Room</th>
+                    <th>Subject</th>
+                    <th>Present Status</th>
+                    <th>Time Table of Teacher</th>
+                  </tr>
+                </thead>
+                <tbody id="studentTableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERFvqQZ87MeVNZAATjRgO5sISO9iqwWLU7ON7pcA6CvwVaRLhzDrBrFhwC+TGej" crossorigin="anonymous"></script>
+  <script src="./student.js"></script>
+</body>
+</html>
